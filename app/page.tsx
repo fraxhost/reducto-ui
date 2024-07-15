@@ -1,5 +1,5 @@
-import InputSection from "@/components/InputSection";
-import OutputSection from "@/components/OutputSection";
+import InputSection from "@/app/components/InputSection";
+import OutputSection from "@/app/components/OutputSection";
 
 export default function Home() {
   return (
