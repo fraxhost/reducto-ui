@@ -1,6 +1,18 @@
-import React from "react";
+import React, { ChangeEvent, useState } from "react";
 
-const InputSection = () => {
+interface InputSectionProps {
+  scenario: string;
+  setScenario: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const InputSection: React.FC<InputSectionProps> = ({
+  scenario,
+  setScenario,
+}) => {
+  const handleScenarioChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    setScenario(event.target.value);
+  };
+
   return (
     <div className="w-1/2">
       <p className="font-bold">Input</p>
@@ -11,8 +23,10 @@ const InputSection = () => {
           <textarea
             name="scenario"
             id="scenario"
-            rows={5}
+            rows={11}
             className="border-2 border-gray-300 rounded-md p-2 focus:outline-none focus:border-green-400"
+            value={scenario}
+            onChange={handleScenarioChange}
           ></textarea>
         </div>
       </div>
